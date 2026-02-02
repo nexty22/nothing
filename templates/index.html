@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEXTY AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+
+    <h1>🤖 NEXTY AI</h1>
+    <p class="tagline">Professional AI Voice Generator</p>
+
+    <form method="POST">
+        <textarea name="text" placeholder="Enter text here..." required></textarea>
+
+        <select name="voice">
+            <option value="nova">Nova (Natural)</option>
+            <option value="alloy">Alloy (Deep)</option>
+        </select>
+
+        <button type="submit">🔊 Generate Voice</button>
+    </form>
+
+    {% if audio %}
+    <div class="audio-box">
+        <audio controls>
+            <source src="data:audio/mpeg;base64,{{ audio }}">
+        </audio>
+
+        <form method="POST" action="/download">
+            <input type="hidden" name="audio" value="{{ audio }}">
+            <button type="submit">⬇ Download MP3</button>
+        </form>
+    </div>
+    {% endif %}
+
+    <div class="whatsapp">
+        <a href="https://whatsapp.com/channel/0029Vb6wQw9BadmcClv4Jk0X" target="_blank">
+            💚 Join NEXTY AI WhatsApp Channel
+        </a>
+    </div>
+
+    <footer>
+        © 2026 NEXTY AI • Voice Technology
+    </footer>
+
+</div>
+
+</body>
+</html>
