@@ -8,34 +8,35 @@
 </head>
 <body>
 
+<div class="glow-bg"></div>
+
 <div class="card">
-
     <h1>🤖 NEXTY AI</h1>
-    <p class="tagline">Professional AI Voice Generator</p>
+    <p class="tagline">Lightning Fast AI Voice Generator</p>
 
-    <form method="POST">
-        <textarea name="text" placeholder="Enter text here..." required></textarea>
+    <textarea id="text" placeholder="Enter your text here..."></textarea>
 
-        <select name="voice">
-            <option value="nova">Nova (Natural)</option>
-            <option value="alloy">Alloy (Deep)</option>
-        </select>
+    <select id="voice">
+        <option value="nova">Nova (Natural)</option>
+        <option value="alloy">Alloy (Deep)</option>
+    </select>
 
-        <button type="submit">🔊 Generate Voice</button>
-    </form>
+    <button onclick="generate()">⚡ Generate Voice</button>
 
-    {% if audio %}
-    <div class="audio-box">
-        <audio controls>
-            <source src="data:audio/mpeg;base64,{{ audio }}">
-        </audio>
-
-        <form method="POST" action="/download">
-            <input type="hidden" name="audio" value="{{ audio }}">
-            <button type="submit">⬇ Download MP3</button>
-        </form>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="bolt">⚡</div>
+        <div class="progress-box">
+            <div id="progress"></div>
+        </div>
+        <p id="speed">Speed: Ultra Fast ⏩</p>
     </div>
-    {% endif %}
+
+    <!-- RESULT -->
+    <div id="result">
+        <audio id="player" controls></audio>
+        <a id="download" download="NEXTY_AI.mp3">⬇ Download MP3</a>
+    </div>
 
     <div class="whatsapp">
         <a href="https://whatsapp.com/channel/0029Vb6wQw9BadmcClv4Jk0X" target="_blank">
@@ -43,11 +44,9 @@
         </a>
     </div>
 
-    <footer>
-        © 2026 NEXTY AI • Voice Technology
-    </footer>
-
+    <footer>© 2026 NEXTY AI • Voice Technology</footer>
 </div>
 
+<script src="/static/app.js"></script>
 </body>
 </html>
