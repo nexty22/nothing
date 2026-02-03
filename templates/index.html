@@ -8,17 +8,22 @@
 </head>
 <body>
 
-<div class="glow-bg"></div>
+<!-- SIDE NEON LIGHTS -->
+<div class="side-light left"></div>
+<div class="side-light right"></div>
+
+<!-- FLOATING GLOW -->
+<div class="ambient-glow"></div>
 
 <div class="card">
     <h1>🤖 NEXTY AI</h1>
-    <p class="tagline">Lightning Fast AI Voice Generator</p>
+    <p class="tagline">Premium Lightning AI Voice Engine</p>
 
-    <textarea id="text" placeholder="Enter your text here..."></textarea>
+    <textarea id="text" placeholder="Type something magical..."></textarea>
 
     <select id="voice">
-        <option value="nova">Nova (Natural)</option>
-        <option value="alloy">Alloy (Deep)</option>
+        <option value="nova">Nova • Natural</option>
+        <option value="alloy">Alloy • Deep</option>
     </select>
 
     <button onclick="generate()">⚡ Generate Voice</button>
@@ -29,11 +34,15 @@
         <div class="progress-box">
             <div id="progress"></div>
         </div>
-        <p id="speed">Speed: Ultra Fast ⏩</p>
+        <p id="speed">Speed: Ultra ⏩</p>
     </div>
 
     <!-- RESULT -->
     <div id="result">
+        <div class="waveform">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
         <audio id="player" controls></audio>
         <a id="download" download="NEXTY_AI.mp3">⬇ Download MP3</a>
     </div>
@@ -44,7 +53,7 @@
         </a>
     </div>
 
-    <footer>© 2026 NEXTY AI • Voice Technology</footer>
+    <footer>© 2026 NEXTY AI • Premium Voice Technology</footer>
 </div>
 
 <script src="/static/app.js"></script>
