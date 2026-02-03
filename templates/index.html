@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NEXTY AI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
+<meta charset="UTF-8">
+<title>NEXTY AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<!-- SIDE NEON LIGHTS -->
-<div class="side-light left"></div>
-<div class="side-light right"></div>
-
-<!-- FLOATING GLOW -->
-<div class="ambient-glow"></div>
+<!-- AURA BACKGROUND -->
+<div class="aura a1"></div>
+<div class="aura a2"></div>
+<div class="aura a3"></div>
 
 <div class="card">
-    <h1>🤖 NEXTY AI</h1>
-    <p class="tagline">Premium Lightning AI Voice Engine</p>
+    <h1 class="title">NEXTY AI</h1>
+    <p class="tagline">An AI That Breathes Voice ⚡</p>
 
-    <textarea id="text" placeholder="Type something magical..."></textarea>
+    <textarea id="text" placeholder="Type your words..."></textarea>
 
     <select id="voice">
-        <option value="nova">Nova • Natural</option>
-        <option value="alloy">Alloy • Deep</option>
+        <option value="nova">Nova • Natural Aura</option>
+        <option value="alloy">Alloy • Deep Aura</option>
     </select>
 
-    <button onclick="generate()">⚡ Generate Voice</button>
+    <button class="glow-btn" onclick="generate()">⚡ Create Aura Voice</button>
 
-    <!-- LOADER -->
+    <!-- LOADING -->
     <div id="loader">
-        <div class="bolt">⚡</div>
+        <div class="ring"></div>
         <div class="progress-box">
             <div id="progress"></div>
         </div>
-        <p id="speed">Speed: Ultra ⏩</p>
+        <p>Synthesizing Aura ⏩</p>
     </div>
 
     <!-- RESULT -->
     <div id="result">
-        <div class="waveform">
-            <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
         <audio id="player" controls></audio>
-        <a id="download" download="NEXTY_AI.mp3">⬇ Download MP3</a>
-    </div>
-
-    <div class="whatsapp">
-        <a href="https://whatsapp.com/channel/0029Vb6wQw9BadmcClv4Jk0X" target="_blank">
-            💚 Join NEXTY AI WhatsApp Channel
+        <a id="download" class="glow-btn mini" download="NEXTY_AI.mp3">
+            ⬇ Download Voice
         </a>
     </div>
 
-    <footer>© 2026 NEXTY AI • Premium Voice Technology</footer>
+    <!-- CONTACT -->
+    <a class="contact-btn" href="https://wa.me/923192084504" target="_blank">
+        💬 Contact on WhatsApp
+    </a>
+
+    <!-- CHANNEL -->
+    <a class="channel-btn"
+       href="https://whatsapp.com/channel/0029Vb6wQw9BadmcClv4Jk0X"
+       target="_blank">
+       🌐 Join NEXTY AI Channel
+    </a>
+
+    <footer>© 2026 NEXTY AI • Aura Technology</footer>
 </div>
 
 <script src="/static/app.js"></script>
