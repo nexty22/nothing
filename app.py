@@ -25,6 +25,3 @@ def api_tts():
         return jsonify({"success": True, "audio": audio_b64})
 
     return jsonify({"success": False}), 500
-
-if __name__ == "__main__":
-    app.run()
