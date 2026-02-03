@@ -10,7 +10,7 @@ def home():
     return send_from_directory("templates", "index.html")
 
 @app.route("/api/tts", methods=["POST"])
-def api_tts():
+def tts():
     data = request.json
     text = data.get("text")
     voice = data.get("voice")
@@ -21,7 +21,7 @@ def api_tts():
     })
 
     if r.status_code == 200:
-        audio_b64 = base64.b64encode(r.content).decode("utf-8")
-        return jsonify({"success": True, "audio": audio_b64})
+        audio = base64.b64encode(r.content).decode("utf-8")
+        return jsonify({"success": True, "audio": audio})
 
     return jsonify({"success": False}), 500
